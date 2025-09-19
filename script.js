@@ -317,7 +317,7 @@ window.addEventListener('load', () => {
 
 // Console welcome message
 console.log(`
-🌱 Bloom & Bytes Website Loaded Successfully!
+🏠 Zenith Home Website Loaded Successfully!
 
 Features:
 ✅ Responsive Design
