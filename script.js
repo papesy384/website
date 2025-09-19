@@ -13,6 +13,90 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
+// Search Functionality
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+
+// Search function
+function performSearch(query) {
+    if (query.trim()) {
+        // Simulate search functionality
+        showNotification(`Searching for: "${query}"`, 'info');
+        
+        // In a real application, this would make an API call or filter products
+        console.log(`Search query: ${query}`);
+        
+        // Example: Scroll to products section
+        const productsSection = document.getElementById('products');
+        if (productsSection) {
+            productsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
+
+// Search button click
+searchBtn.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    performSearch(query);
+});
+
+// Search on Enter key
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const query = searchInput.value.trim();
+        performSearch(query);
+    }
+});
+
+// User Account Icons Functionality
+const cartIcon = document.getElementById('cartIcon');
+const wishlistIcon = document.getElementById('wishlistIcon');
+const profileIcon = document.getElementById('profileIcon');
+const cartCount = document.getElementById('cartCount');
+const wishlistCount = document.getElementById('wishlistCount');
+
+// Cart functionality
+let cartItems = 0;
+let wishlistItems = 0;
+
+cartIcon.addEventListener('click', () => {
+    showNotification('Cart clicked! (Demo functionality)', 'info');
+    // In a real app, this would open a cart modal or redirect to cart page
+});
+
+wishlistIcon.addEventListener('click', () => {
+    wishlistItems++;
+    wishlistCount.textContent = wishlistItems;
+    wishlistCount.style.display = wishlistItems > 0 ? 'flex' : 'none';
+    showNotification('Added to wishlist!', 'success');
+});
+
+profileIcon.addEventListener('click', () => {
+    showNotification('Profile clicked! (Demo functionality)', 'info');
+    // In a real app, this would open login modal or redirect to profile
+});
+
+// Simulate adding items to cart (for demo purposes)
+function addToCart() {
+    cartItems++;
+    cartCount.textContent = cartItems;
+    cartCount.style.display = cartItems > 0 ? 'flex' : 'none';
+    showNotification('Item added to cart!', 'success');
+}
+
+// Add click listeners to product buttons to simulate adding to cart
+document.addEventListener('DOMContentLoaded', () => {
+    const productButtons = document.querySelectorAll('.btn-outline');
+    productButtons.forEach(button => {
+        if (button.textContent.includes('View Products')) {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                addToCart();
+            });
+        }
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

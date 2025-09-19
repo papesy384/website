@@ -15,20 +15,54 @@
             <div class="nav-logo">
                 <h2>Zenith Home</h2>
             </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Search products..." class="search-input" id="searchInput">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#products" class="nav-link">Products</a>
+                <li class="nav-item dropdown">
+                    <a href="#products" class="nav-link">Shop All <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#electronics">Electronics</a>
+                        <a href="#home-garden">Home & Garden</a>
+                        <a href="#fashion">Fashion</a>
+                        <a href="#sports">Sports & Fitness</a>
+                        <a href="#beauty">Beauty & Health</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
+            
+            <!-- User Account Icons -->
+            <div class="user-actions">
+                <div class="action-icon" id="wishlistIcon" title="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </div>
+                <div class="action-icon" id="cartIcon" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </div>
+                <div class="action-icon" id="profileIcon" title="Account">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
